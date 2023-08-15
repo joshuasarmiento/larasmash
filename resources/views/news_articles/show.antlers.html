@@ -1,3 +1,7 @@
-<h1>{{title}}</h1>
-<p>{{ article_content }}</p>
-<p>{{ author:name }}</p>
+<h1>TITLE: {{title}}</h1>
+<p>CONTENT: {{ article_content }}</p>
+<p>AUTHOR: {{ author:name }}</p>
+<p>DATE: {{ date }}</p>
+{{ tags }}
+    <p>TAG: {{title}} </p>
+{{ /tags }}
