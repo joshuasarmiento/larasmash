@@ -1,0 +1,13 @@
+<div>{{ title }}</div>
+<br>
+{{ collection:news_articles }}
+    <div style="border: 1px solid grey;">
+        <a href="{{ url }}">{{ title }}</a>
+        <p>{{ article_content }}</p>
+        <div>
+            <span>{{ date }}</span>
+            <span>{{ author:name }}</span>
+        </div>
+    </div>
+    <br>
+{{ /collection:news_articles }}

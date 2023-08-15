@@ -1,3 +1,17 @@
-<section>
-    hello world
+<section style="border: 1px solid red;">
+    <h6 >{{ teaser }}</h6>
+    <h1> {{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    {{ if isshow}}
+        <p> This is sample toggle </p>
+    {{ /if }}
 </section>
+
+{{ panels }}
+<section style="border: 1px solid blue;">
+    <img src="{{panel_image}}" alt="">
+    <h2>{{ panel_header}}</h2>
+    <p>{{ panel_content }}</p>
+    <a href="{{cta_link}}">{{cta_text}}</a>
+</section>
+{{ /panels }}
