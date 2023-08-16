@@ -1,16 +1,5 @@
 <div>{{ title }}</div>
 <br>
 {{ collection:news_articles }}
-    <div style="border: 1px solid grey;">
-        <a href="{{ url }}">TITLE: {{ title }}</a>
-        <p>CONTENT: </p>{{ article_content }}</p>
-        <div>
-            <span>DATE: {{ date }}</span>
-            <span>AUTHOR: {{ author:name }}</span>
-        </div>
-        {{ tags }}
-            <a href="{{ url }}">TAG: {{title}}</a>
-        {{ /tags }}
-    </div>
-    <br>
+{{ partial:news_articles/card }}
 {{ /collection:news_articles }}
