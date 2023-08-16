@@ -1,0 +1,11 @@
+<header>
+    <h1>SEARCH RESULTS FOR: {{ get:q }}</h1>
+</header>
+<br>
+<section>
+    {{ search:results  }}
+        <h2><a href="{{ url }}">{{title }}</a></h2>
+        <p>{{collection}}</p>
+        <p>{{ (article_content ?? subtitle ?? teaser ?? content) | safe_truncate(25) }}..</p>
+    {{ /search:results }}
+</section>

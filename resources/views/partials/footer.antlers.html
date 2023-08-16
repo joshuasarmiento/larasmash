@@ -1,4 +1,15 @@
 <br>
 <div style="border: 1px solid pink;">
-    this is footer
+    <span>FOoter</span>
+    <ul>
+        {{ nav:footer }}
+            <li><a href="{{ url }}"
+                {{ if external }}
+                    target="_blank"
+                    rel="noopener"
+                {{ /if }}>
+                {{ title }}
+            </a></li>
+        {{ /nav:footer}}
+    </ul>
 </div>

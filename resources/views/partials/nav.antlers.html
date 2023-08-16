@@ -1,8 +1,33 @@
 <nav style="border: 1px solid pink;">
     <ul class="flex">
         <li style="padding-right: 14px;">Logo</li>
-        <li><a style="padding-right: 14px;"  href="/">Home</a></li>
-        <li><a  href="/news_articles">News & Articles</a></li>
+        <!-- Including Home but will copy the title-->
+        <!-- include_home="true" -->
+        {{ nav:collection:pages  }}
+            <!-- Condition Including Home -->
+            {{ if first }}
+                <li><a style="padding-right: 14px;"  href="/">Home</a></li>
+            {{ /if }}
+
+            {{ if ! children }}
+                <li><a style="padding-right: 14px;"  href="{{ url }}">{{ title }}</a></li>
+
+            {{ else }}
+                <button>{{title}}</button>
+                <div>
+                    <ul>
+                        {{ children }}
+                            <li><a href="{{url}}"><option value="volvo">{{ title }}</option></a></li>
+                        {{ /children }}
+                    </ul>
+                </div>
+            {{ /if }}
+        {{ /nav:collection:pages }}
+        <form action="search">
+            <label for="q">SEARCH:</label>
+            <input style="border: 1px solid pink; height: 40px;" type="search" name="q">
+            <input type="submit">
+        </form>
     </ul>
 </nav>
 <br>

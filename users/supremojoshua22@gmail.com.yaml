@@ -3,3 +3,7 @@ name: Joshua
 avatar: i-remit-local.png
 id: bd8342c7-47a4-499b-8cca-25998d1d70b2
 password_hash: $2y$10$3CrGywgFUaje4uoXmcOku.iGpQZ21E5oAjrTUCvmVibsE9h84tyfi
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

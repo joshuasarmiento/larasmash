@@ -1,15 +1,17 @@
 <div style="border: 1px solid grey;">
     <a href="{{ url }}" >
-        <img src="{{ glide :src="featured_image" width="600" height="400" fit="crop_focal" }}" alt="">
+        <img src="{{ glide :src="featured_image" width="600" height="200" fit="crop_focal" }}" alt="">
         <p>TITLE: {{ title }}</p>
         <p>CONTENT: </p>{{ article_content }}</p>
         <div>
             <span>DATE: {{ date }}</span>
             <span>AUTHOR: {{ author:name }}</span>
         </div>
-        {{ tags }}
-            <a href="{{ url }}">TAG: {{title}}</a>
-        {{ /tags }}
+        {{ if ! hide_tag }}
+            {{ tags }}
+                <a href="{{ url }}">TAG: {{title}}</a>
+            {{ /tags }}
+        {{ /if }}
     </a>
 </div>
 <br>
