@@ -7,3 +7,11 @@ preferences:
   collections:
     pages:
       after_save: continue_editing
+  forms:
+    contact:
+      columns:
+        - datestamp
+        - email
+        - note
+        - name
+        - resume

@@ -1,6 +1,21 @@
-<img src="{{ glide :src="featured_image" width="1800" height="1200" filter="grayscale" sharpen="100" }}" alt="">
+<img src="{{ glide :src="featured_image" width="1800" height="1200" sharpen="100" }}" alt="">
 <h1>TITLE: {{title}}</h1>
-<p>CONTENT: {{ article_content }}</p>
+<br>
+{{ article_content }}
+    {{ if type == "text"}}
+        <p>{{text}}</p>
+    {{ elseif type == "quote"}}
+        <p> QUOTE: {{quote_field}}</p>
+        <p>&dash;{{author}}</p>
+    {{ elseif type == "related_articles" }}
+        {{ related_entries }}
+            <a href="{{url}}">Related: <strong>{{title}}</strong></a>
+        {{ /related_entries }}
+    {{ elseif type == "embed" }}
+        {{ partial :src="embed_template"}}
+    {{ /if }}
+{{ /article_content }}
+
 <p>AUTHOR: {{ author:name }}</p>
 <p>DATE: {{ date }}</p>
 {{ tags }}

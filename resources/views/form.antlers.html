@@ -1,0 +1,26 @@
+{{ form:contact }}
+    {{ if success }}
+        <p style="font-size: 20px;">Thanks! Someone will be in touch soon..</p>
+        <br>
+    {{ /if }}
+    {{ if errors }}
+        <p style="font-size: 20px;">There are errors! Please fix these below</p>
+        {{ errors }}
+            {{ value }}
+        {{ /errors }}
+        <br>
+        <br>
+    {{ /if }}
+    {{ fields }}
+        <span style="border: 1px solid black;">{{ field }}</span>
+        <br>
+        <br>
+    {{ /fields }}
+    {{# <label for="name">Name</label>
+    <input value="{{ old:name }}" style="border: 1px solid black;" type="text" name="name"><br>
+    <label for="email">Email</label>
+    <input value="{{ old:email }}" style="border: 1px solid black;" type="email" name="email"><br>
+    <label for="note">Note</label>
+    <input value="{{ old:note }}" style="border: 1px solid black;" type="textarea" name="note"><br> #}}
+    <button style="border: 1px solid black;" type="submit">Submit</button>
+{{ /form:contact }}

@@ -24,6 +24,23 @@ tabs:
               visibility: visible
               hide_display: false
           -
+            handle: featured_image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Featured Image'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+          -
             handle: article_content
             field:
               buttons:
@@ -63,23 +80,104 @@ tabs:
               instructions_position: above
               visibility: visible
               hide_display: false
-          -
-            handle: featured_image
-            field:
-              max_files: 1
-              mode: list
-              container: assets
-              restrict: false
-              allow_uploads: true
-              show_filename: true
-              show_set_alt: true
-              type: assets
-              display: 'Featured Image'
-              icon: assets
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
+              sets:
+                set_group:
+                  display: 'Set Group'
+                  instructions: null
+                  icon: null
+                  sets:
+                    quote:
+                      display: Quote
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: quote_field
+                          field:
+                            buttons:
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                              - removeformat
+                              - quote
+                              - anchor
+                              - image
+                              - table
+                            smart_typography: false
+                            save_html: true
+                            inline: false
+                            toolbar_mode: floating
+                            reading_time: false
+                            word_count: false
+                            fullscreen: true
+                            allow_source: true
+                            enable_input_rules: true
+                            enable_paste_rules: true
+                            remove_empty_nodes: false
+                            antlers: false
+                            link_noopener: true
+                            link_noreferrer: true
+                            target_blank: true
+                            always_show_set_button: false
+                            collapse: false
+                            previews: true
+                            type: bard
+                            display: 'Quote Field'
+                            icon: bard
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+                        -
+                          handle: author
+                          field:
+                            input_type: text
+                            antlers: false
+                            type: text
+                            display: Author
+                            icon: text
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+                    related_articles:
+                      display: 'Related Articles'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: related_entries
+                          field:
+                            mode: default
+                            create: false
+                            collections:
+                              - news_articles
+                            type: entries
+                            display: 'Related Entries'
+                            icon: entries
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
+                    embed:
+                      display: Embed
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: embed_template
+                          field:
+                            hide_partials: false
+                            blueprint: false
+                            folder: partials
+                            type: template
+                            display: 'Embed TEmplate'
+                            icon: template
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -98,4 +196,12 @@ tabs:
               default: now
               validate:
                 - required
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
 title: 'News Article'

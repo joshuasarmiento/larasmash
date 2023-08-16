@@ -13,7 +13,7 @@
 <br>
 <section>
     <p>Latest News - Limit val 1</p>
-    {{ collection:news_articles limit="2" }}
-    {{ partial:news_articles/card }}
+    {{  collection:news_articles limit="1" sort="date" }}
+        {{ partial:news_articles/card }}
     {{ /collection:news_articles }}
 </section>
