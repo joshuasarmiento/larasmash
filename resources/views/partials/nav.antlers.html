@@ -1,4 +1,4 @@
-<nav style="border: 1px solid pink;">
+{{# <nav style="border: 1px solid pink;">
     <ul class="flex">
         <li style="padding-right: 14px;">Logo</li>
         <!-- Including Home but will copy the title-->
@@ -30,4 +30,34 @@
         </form>
     </ul>
 </nav>
-<br>
+<br> #}}
+
+<header>
+    <nav style="border: 1px solid pink;">
+        <ul style="display: flex;">
+            {{ nav:header }}
+              {{ if first }}
+                <li><a style="padding-right: 14px;"  href="/">Home</a></li>
+                {{ /if }}
+                {{ if ! children }}
+                    <li><a style="padding-right: 14px;"  href="{{ url }}">{{ title }}</a></li>
+                {{ else }}
+                    <button>{{title}}</button>
+                    <div>
+                        <ul>
+                            {{ children }}
+                                <li><a href="{{url}}"><option value="volvo">{{ title }}</option></a></li>
+                            {{ /children }}
+                        </ul>
+                    </div>
+                {{ /if }}
+            {{ /nav:header }}
+
+        </ul>
+        <form action="search">
+            <label for="q">SEARCH:</label>
+            <input style="border: 1px solid pink; height: 20px;" type="search" name="q">
+            <input type="submit">
+        </form>
+    </nav>
+</header>
